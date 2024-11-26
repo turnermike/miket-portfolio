@@ -1,5 +1,5 @@
 $background-color: #cab7b7;
-$text-color: #fff;
+$text-color: #888;
 
 body {
   background: $background-color;
@@ -9,5 +9,5 @@ body {
 }
 
 h1 {
-  color: red;
+  color: $text-color;
 }
