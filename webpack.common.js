@@ -7,11 +7,19 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   loader: 'babel-loader',
+      //   test: /\.js$/,
+      //   exclude: /node_modules/
+      // },
       {
-        loader: 'babel-loader',
-        test: /\.js$/,
-        exclude: /node_modules/
-      },
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          'thread-loader',
+          'babel-loader',                       // babel options are set in babel.config.js
+        ]
+      },      
       {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
