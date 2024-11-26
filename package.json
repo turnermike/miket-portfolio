@@ -1,7 +1,7 @@
 {
-  "name": "react_starter",
+  "name": "miket-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "My portfolio website and resume.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
