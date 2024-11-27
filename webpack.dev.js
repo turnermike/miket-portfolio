@@ -5,7 +5,9 @@ const common = require('./webpack.common.js');
 
 
 module.exports = merge(common, {
+  
   mode: 'development',
+  
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
@@ -13,6 +15,7 @@ module.exports = merge(common, {
     compress: true,
     port: 3000,
   },
+  
   cache: {
     type: 'filesystem',
     cacheDirectory: path.resolve(__dirname, '.webpack_cache'),
@@ -21,6 +24,7 @@ module.exports = merge(common, {
       config: [path.resolve(__dirname, 'webpack.common.js'), path.resolve(__dirname, 'webpack.dev.js')]
     }
   },
+  
   plugins: [
     new WebpackBuildNotifierPlugin({
       title: "MikeT Portfolio Custom Build",
@@ -31,5 +35,7 @@ module.exports = merge(common, {
       activateTerminalOnError: true,
     }),
   ],
+  
   devtool: 'eval-source-map',   
+  
 });

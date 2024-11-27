@@ -13,11 +13,6 @@ module.exports = {
   module: {
     
     rules: [
-      // {
-      //   loader: 'babel-loader',
-      //   test: /\.js$/,
-      //   exclude: /node_modules/
-      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -26,10 +21,12 @@ module.exports = {
           'babel-loader',                       // babel options are set in babel.config.js
         ]
       },
+      
       {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
+      
       {
         test: /\.(pdf|png|jpe?g|gif|woff|woff2|eot|ttf|otf|svg)$/,
         use: [
@@ -40,8 +37,14 @@ module.exports = {
             },
           },
         ],
-      }      
+      },
       
     ]
+    
   },
+  
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+  },  
+  
 };
