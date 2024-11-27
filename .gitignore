@@ -1,1 +1,9 @@
+# misc
+.DS_Store
+.webpack_cache/
+
+# dependencies
 node_modules
+
+# production
+/build
