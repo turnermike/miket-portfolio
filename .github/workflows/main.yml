@@ -37,7 +37,6 @@ jobs:
         working-directory: ./
 
       - name: Build React App
-        # run: npm run build
         run: npm run build:dev
         working-directory: ./public
 
