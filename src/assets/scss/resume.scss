@@ -12,13 +12,13 @@
 
 .resume-section {
   position: relative !important;
-  padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
-  padding-top: 2em;
+  padding-top: 6em;
+  padding-bottom: 6em;
 
   @include mixins.respond-to(sm) {
-    padding-top: 4em;
+    padding-top: 10em;
   }
 }
 

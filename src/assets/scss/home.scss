@@ -19,7 +19,7 @@
   padding-top: 2em;
 
   @include mixins.respond-to(sm) {
-    padding-top: 4em;
+    padding-top: 6em;
   }
 
   .home-content {

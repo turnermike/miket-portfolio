@@ -40,7 +40,7 @@ function NavBar() {
       expand='md'
       className={navColour ? 'sticky' : 'navbar'}
     >
-      <Container fluid>
+      <Container>
         
         <Navbar.Brand href='/' className='d-flex hi-hat-logo'>
           <img src={logo} className='img-fluid logo' alt='brand' />

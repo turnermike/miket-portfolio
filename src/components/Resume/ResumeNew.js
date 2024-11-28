@@ -14,7 +14,7 @@ function ResumeNew() {
   // }, []);
 
   return (
-    <div>
+
       <Container className="resume-section"> 
         {/* <Particle /> */}
         
@@ -54,7 +54,7 @@ function ResumeNew() {
         </Row> */}
         
       </Container>
-    </div>
+
   );
 }
 

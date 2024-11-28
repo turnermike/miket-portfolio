@@ -6,10 +6,8 @@
   padding-top: 10px !important;
   padding-bottom: 8px !important ;
   color: #fff;
-  // font-size: 0.75em;
   font-size: 0.875em;
   text-align: center;
-  background-color: rgb(10, 4, 22);
 
   .footer-copywright {
     text-align: center !important;
@@ -18,7 +16,6 @@
   .footer-social {
     margin-top: 16px;
     z-index: 1;
-    // text-align: right !important;
   }
 
   @media (max-width: 767px) {
@@ -41,9 +38,5 @@
     top: -12px;
     padding: 0 !important;
     font-size: 1.7142857142857142em;
-  }
-
-  .blockquote-footer {
-    color: #a588c0 !important;
   }
 }

@@ -211,7 +211,7 @@ function SkillsIconsCarousel() {
 function Home() {
   return (
     <section>
-      <Container fluid className="home-section" id="home">
+      <Container className="home-section" id="home">
         
         {/* <Particle /> */}
         
