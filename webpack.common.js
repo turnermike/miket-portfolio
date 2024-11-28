@@ -13,14 +13,28 @@ module.exports = {
   module: {
     
     rules: [
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     'thread-loader',
+      //     'babel-loader',                       // babel options are set in babel.config.js
+      //   ]
+      // },
+
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
           'thread-loader',
-          'babel-loader',                       // babel options are set in babel.config.js
-        ]
-      },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'], // Add React preset
+            },
+          },
+        ],
+      },      
       
       {
         test: /\.(scss|css)$/,
