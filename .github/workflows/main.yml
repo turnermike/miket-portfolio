@@ -84,7 +84,7 @@ jobs:
           aws-region: 'us-east-1'
 
       - name: Sync with S3 (Production)
-        run: aws s3 sync ./build s3://${{ secrets.PRODUCTION_BUCKET_NAME }} --delete
+        run: aws s3 sync ./public s3://${{ secrets.PRODUCTION_BUCKET_NAME }} --delete
 
       - name: Invalidate CloudFront Cache (Production)
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.PRODUCTION_DISTRIBUTION_ID }} --paths "/*"
