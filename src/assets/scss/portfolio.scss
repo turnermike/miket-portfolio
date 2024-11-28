@@ -1,8 +1,16 @@
+@use 'mixins';
+@use 'variables';
+
 .portfolio-section {
   position: relative !important;
-  padding-top: 150px !important;
+  // padding-top: 150px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
+  padding-top: 2em;
+
+  @include mixins.respond-to(sm) {
+    padding-top: 4em;
+  }
   // background: pink;
 
   .portfolio-content {

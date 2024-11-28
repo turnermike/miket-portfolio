@@ -18,6 +18,10 @@
   padding-bottom: 30px !important;
   padding-top: 2em;
 
+  @include mixins.respond-to(sm) {
+    padding-top: 4em;
+  }
+
   .home-content {
     padding-bottom: 20px;
     text-align: left;

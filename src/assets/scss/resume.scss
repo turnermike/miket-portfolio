@@ -1,3 +1,6 @@
+@use 'mixins';
+@use 'variables';
+
 .react-pdf__Document {
   flex-direction: column;
   align-items: center;
@@ -9,10 +12,14 @@
 
 .resume-section {
   position: relative !important;
-  padding-top: 110px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
+  padding-top: 2em;
+
+  @include mixins.respond-to(sm) {
+    padding-top: 4em;
+  }
 }
 
 .resume {

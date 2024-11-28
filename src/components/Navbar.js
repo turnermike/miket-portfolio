@@ -10,10 +10,10 @@ import {
   AiOutlineHome,
   AiFillHome,
 } from "react-icons/ai";
-import {
-  BsLaptop,
-  BsFillLaptopFill,
-} from "react-icons/bs";
+// import {
+//   BsLaptop,
+//   BsFillLaptopFill,
+// } from "react-icons/bs";
 import {
   MdOutlineDescription,
   MdDescription
@@ -40,7 +40,7 @@ function NavBar() {
       expand='md'
       className={navColour ? 'sticky' : 'navbar'}
     >
-      <Container>
+      <Container fluid>
         
         <Navbar.Brand href='/' className='d-flex hi-hat-logo'>
           <img src={logo} className='img-fluid logo' alt='brand' />
