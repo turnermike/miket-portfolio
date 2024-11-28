@@ -1,0 +1,192 @@
+@use 'mixins';
+@use 'variables';
+
+/**
+ * Home Page Styles
+ *
+ */
+
+.home-section,
+.home-about-section {
+  .img-fluid {
+    border-radius: 20px;
+  }
+}
+
+.home-section {
+  position: relative;
+  padding-bottom: 30px !important;
+  padding-top: 2em;
+
+  .home-content {
+    padding-bottom: 20px;
+    text-align: left;
+
+    .home-header {
+      padding: 40px 12px !important;
+      font-size: 1.125em;
+
+      h2 {
+        display: inline;
+        float: left;
+        margin-right: 12px;
+      }
+
+      p {
+        margin-bottom: 8px;
+        @include mixins.respond-to(md) {
+          margin-bottom: 16px;
+        }
+      }
+
+      .heading-name {
+        margin-bottom: 20px !important;
+        strong {
+          color: variables.$font-yellow-light;
+          font-weight: 900;
+          font-style: italic;
+        }
+      }
+    }
+
+    .typewriter {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      top: -10px;
+      font-size: 1.222em;
+      background: red;
+
+      .Typewriter {
+        line-height: 0;
+      }
+
+      .Typewriter__wrapper {
+        color: variables.$font-yellow-dark;
+      }
+      .Typewriter__cursor {
+        color: #ffc57a !important;
+      }
+
+      @media (max-width: 767px) {
+        .Typewriter__wrapper {
+          position: absolute !important;
+        }
+        .Typewriter__cursor {
+          display: none !important;
+        }
+      }
+    }
+
+    .sidebar {
+      // 768px
+      @include mixins.respond-to(md) {
+        padding-top: 6em;
+      }
+    }
+  }
+}
+
+.home-about-section {
+  position: relative;
+  padding-top: 20px;
+
+  @include mixins.respond-to(md) {
+    padding-top: 40px;
+  }
+
+  p {
+    font-size: 1.125em;
+  }
+  .home-about-description {
+    color: white !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+/* --------- */
+/* Home section (copied from OG styles) */
+/* --------- */
+#tsparticles {
+  position: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  width: 100%;
+  height: 100%;
+}
+
+// see app.scss for carousel
+
+.gordon {
+  justify-content: center !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  // @media (max-width: 767px) {
+  //   padding-top: 2em !important;
+  //   padding-bottom: 2em !important;
+  // }
+}
+
+.home-about-social {
+  // text-align: center !important;
+  padding-top: 25px;
+  color: white !important;
+}
+
+.home-about-social-links {
+  justify-content: center !important;
+  padding-top: 15px !important;
+  display: inline-block !important;
+  position: relative !important;
+  padding-inline-start: 0 !important;
+
+  li:first-child {
+    padding-left: 0;
+  }
+}
+
+.home-social-icons {
+  position: relative !important;
+  display: inline-block !important;
+  width: 40px !important;
+  height: 40px !important;
+  color: variables.$background-color-2 !important;
+  text-align: center !important;
+  font-size: 1.2em !important;
+  line-height: 2em !important;
+  background: rgba(255, 255, 255, 0.972) !important;
+  border-radius: 50% !important;
+  transition: 0.5s !important;
+}
+
+.home-social-icons::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  // background: #68187a;
+  background: variables.$font-color-2;
+  transition: 0.5s;
+  transform: scale(0.9);
+  z-index: -1;
+}
+
+.home-social-icons:hover::before {
+  transform: scale(1.15);
+  box-shadow: 0 0 18px variables.$font-color-2;
+}
+
+.home-social-icons:hover {
+  color: variables.$font-color-2 !important;
+  box-shadow: 0 0 5px variables.$font-color-2;
+  text-shadow: 0 0 2px variables.$font-color-2;
+}
+
+.social-icons {
+  display: inline-block !important;
+  padding-right: 15px;
+  padding-left: 15px;
+}

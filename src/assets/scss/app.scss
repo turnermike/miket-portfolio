@@ -1,0 +1,342 @@
+/**
+* Global or Shared Styles
+*
+* This file includes:
+* - tag defaults
+* - image overlay
+* - header 
+* - preloader
+* - skills carousel
+* - 
+*
+* Colours: https: //www.colourlovers.com/palette/34448/2_Kool_for_Skool
+*
+* Breakpoints (react-bootstrap):
+*
+* Breakpoint	Class Prefix	Description	Min             Width
+* xs	        .col-	        Extra       small devices	  None
+* sm	        .col-sm-	    Small       devices	        576px
+* md	        .col-md-	    Medium      devices	        768px
+* lg	        .col-lg-	    Large       devices	        992px
+* xl	        .col-xl-	    Extra       large devices	  1200px
+* xxl	        .col-xxl-	    Extra       extra large	    1400px
+*
+* Bottom Margins
+* Headers: 20px
+* Paragraphs: 16px
+*
+*/
+
+@use 'variables';
+@use 'mixins';
+@use 'nav-bar';
+@use 'footer';
+@use 'home';
+@use 'portfolio';
+@use 'resume';
+
+// responsive debug
+@if variables.$debug {
+  .home-section {
+    //0px
+    background: pink;
+  }
+  .home-section {
+    // 576px
+    @include mixins.respond-to(sm) {
+      background-color: lightblue;
+    }
+    // 768px
+    @include mixins.respond-to(md) {
+      background-color: lightcoral;
+    }
+    // 992px
+    @include mixins.respond-to(lg) {
+      background-color: lightcyan;
+    }
+    // 1200px
+    @include mixins.respond-to(xl) {
+      background-color: lightgreen;
+    }
+    // 1400px
+    @include mixins.respond-to(xxl) {
+      background-color: lightpink;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: variables.$background-color-1;
+  background-image: linear-gradient(to left, #020304, black);
+  // background: red !important;
+}
+
+h1 {
+  margin-bottom: 20px !important;
+  padding-bottom: 0 !important;
+  // font-size: 2.625em !important;
+  font-size: 1em !important;
+
+  @include mixins.respond-to(sm) {
+    font-size: 1.333em !important;
+  }
+}
+
+h2 {
+  font-size: 1.25em !important;
+
+  @include mixins.respond-to(sm) {
+    font-size: 1.375em !important;
+  }
+}
+
+h3 {
+  margin-bottom: 30px !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: variables.$font-color-2 !important;
+
+  &:hover {
+    color: #fff !important;
+  }
+}
+button:focus {
+  box-shadow: none !important;
+}
+
+// image effect
+.img-overlay-wrapper {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    .overlay {
+      background-color: rgba(0, 0, 0, 0); // transparency on hover
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: background-color 0.45s ease;
+  }
+}
+
+// buttons
+.btn-primary {
+  color: #fff !important;
+  background-color: variables.$font-yellow-dark !important;
+  border-color: variables.$font-yellow-light !important;
+}
+
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: variables.$font-yellow-light !important;
+  border-color: variables.$font-yellow-light !important;
+}
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* --------- */
+/*  Header */
+/* --------- */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------- */
+/*  Preloader */
+/* --------- */
+// https://icons8.com/preloaders/en/miscellaneous/rocket/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-color: #0c0513;
+  /* background-image: url(../images/pre.svg); */
+  background-image: url(../images/1476.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#preloader-none {
+  opacity: 0;
+}
+
+#no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* --------- */
+/*  Swiper */
+/* --------- */
+.carousel-wrapper {
+  position: relative;
+  // margin-bottom: 80px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  .swiper-wrapper {
+    cursor: grab;
+    // background: pink;
+
+    .swiper-slide {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center;
+      font-size: 18px;
+      // background: lightblue;
+
+      svg {
+        display: block;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+
+      &.woocommerce {
+        svg {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #777 !important;
+  &::after {
+    // font-size: 1.75em !important;
+    font-size: 1.5em !important;
+    font-weight: bold;
+
+    transition: color 0.45s ease;
+  }
+  &:hover {
+    &::after {
+      color: #fff;
+    }
+  }
+}
+.swiper-button-prev {
+  left: -5px !important;
+}
+.swiper-button-next {
+  right: -5px !important;
+}
+
+.pagination-wrapper {
+  display: none;
+  text-align: center;
+
+  @include mixins.respond-to(md) {
+    display: block;
+  }
+
+  .swiper-pagination-bullet {
+    background: #777;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+}
+
+// xs
+// #home {
+//   background: pink;
+// }
+// // sm
+// @media (min-width: 576px) {
+//   #home {
+//     background: lightgray;
+//   }
+// }
+// // md
+// @media (min-width: 768px) {
+//   #home {
+//     background: lightblue;
+//   }
+// }
+// // lg
+// @media (min-width: 992px) {
+//   #home {
+//     background: lightgreen;
+//   }
+// }
+// // xl
+// @media (min-width: 1200px) {
+//   #home {
+//     background: lightcoral;
+//   }
+// }
+// // xxl
+// @media (min-width: 1400px) {
+//   #home {
+//     background: lightseagreen;
+//   }
+// }

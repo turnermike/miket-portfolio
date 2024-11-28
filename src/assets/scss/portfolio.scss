@@ -1,0 +1,16 @@
+.portfolio-section {
+  position: relative !important;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  // background: pink;
+
+  .portfolio-content {
+    .list-wrapper {
+      ul {
+        padding-left: 0;
+        list-style: none;
+      }
+    }
+  }
+}
