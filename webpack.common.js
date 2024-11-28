@@ -44,7 +44,10 @@ module.exports = {
   },
   
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+    },    
   },  
   
 };
