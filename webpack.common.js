@@ -13,31 +13,52 @@ module.exports = {
   module: {
     
     rules: [
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     'thread-loader',
+      //     'babel-loader',                       // babel options are set in babel.config.js
+      //   ]
+      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
           'thread-loader',
-          'babel-loader',                       // babel options are set in babel.config.js
-        ]
-      },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'], // Add React preset
+            },
+          },
+        ],
+      },      
       
       {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       
+      // {
+      //   test: /\.(pdf|png|jpe?g|gif|woff|woff2|eot|ttf|otf|svg)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.(pdf|png|jpe?g|gif|woff|woff2|eot|ttf|otf|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
-        ],
-      },
+        test: /\.(png|jpe?g|gif|svg|pdf)$/,
+        type: 'asset/resource', // Use asset/resource for images
+        generator: {
+          // filename: 'images/[name][ext][query]', // Place images in ./images directory
+          filename: 'images/[name].[ext]',
+        },
+      },      
       
     ]
     
