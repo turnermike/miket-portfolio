@@ -41,17 +41,25 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       
+      // {
+      //   test: /\.(pdf|png|jpe?g|gif|woff|woff2|eot|ttf|otf|svg)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.(pdf|png|jpe?g|gif|woff|woff2|eot|ttf|otf|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
-        ],
-      },
+        test: /\.(png|jpe?g|gif|svg|pdf)$/,
+        type: 'asset/resource', // Use asset/resource for images
+        generator: {
+          // filename: 'images/[name][ext][query]', // Place images in ./images directory
+          filename: 'images/[name].[ext]',
+        },
+      },      
       
     ]
     
