@@ -10,9 +10,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Notes
 
-Use node version 20
-`nvm install 20`
-`nvm use 20`
+Use node version 20  
+`nvm install 20`  
+`nvm use 20`  
 `node -v`
 
 ## Deploy to Staging Server
@@ -29,7 +29,8 @@ Use node version 20
 
 ## Hosted Zone Setup for Subdomain
 
-1. Go to Route53 dashboard: https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones
+1. Go to Route53 dashboard:  
+   https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones
 2. Assuming the domain has already been added, click on the domain name in question.
 3. Click the Create Record button.
 4. Confirm that "A" record has been selected for Record Type.
@@ -41,7 +42,8 @@ Use node version 20
 
 ## S3 Bucket Setup
 
-1. Go to S3 dashboard: https://ca-central-1.console.aws.amazon.com/s3/home?region=ca-central-1
+1. Go to S3 dashboard:  
+   https://ca-central-1.console.aws.amazon.com/s3/home?region=ca-central-1
 2. Click the Create Bucket button.
 3. Enter a bucket name, keep naming conventions so use something like xyz-staging.
 4. Keep ACLs disabled.
@@ -81,7 +83,8 @@ Use node version 20
 ## Add SSL Certificate via AWS Certificate Manager
 
 1. Confirm that the `us-east-1` regtion has been set.
-2. Go to the ACM dashboard: https://ca-central-1.console.aws.amazon.com/acm/home?region=ca-central-1#/certificates/list
+2. Go to the ACM dashboard:  
+   https://ca-central-1.console.aws.amazon.com/acm/home?region=ca-central-1#/certificates/list
 3. Click the Request button and "Request a public certificate", click the Next button.
 4. Add your new subdomain (staging.xyz.com) in the Fully qualified domain name field.
 5. Keep Validation Method as DNS and Key algorithm as RSA 2048.
@@ -91,7 +94,8 @@ Note: Be sure to setup your subdomain and DNS at your domain registrar.
 
 ### Validate Your Domain
 
-1. Open a new tab and go to Route53 dashboard: https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones
+1. Open a new tab and go to Route53 dashboard:  
+   https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones
 2. Select your domain name and click the Create Record button.
 3. This time select CNAME from Record Type and your Record Name.
 4. Go back to your ACM tab and copy the "CNAME name" and paste it in the Record Name field on the Route53 tab.
@@ -100,7 +104,8 @@ Note: Be sure to setup your subdomain and DNS at your domain registrar.
 
 ## CloudFront Setup
 
-1. Go the the CloudFront dashboard: https://us-east-1.console.aws.amazon.com/cloudfront/v4/home?region=ca-central-1#/distributions
+1. Go the the CloudFront dashboard:  
+   https://us-east-1.console.aws.amazon.com/cloudfront/v4/home?region=ca-central-1#/distributions
 2. Click the Create Distribution button.
 3. Select your Origin Domain.
 4. Click the Use Website Endpoint button.
@@ -152,7 +157,8 @@ Note: Be sure to setup your subdomain and DNS at your domain registrar.
 
 ## Complete Subdomain Setup via Route53
 
-1. Go to Route53 dashboard: https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones
+1. Go to Route53 dashboard:  
+   https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones
 2. Check the box next to your new subdomain and click the Edit Record button.
 3. Select A record for Record Type, set Alias to true, and "Route traffic to" Alias to CloudFront distribution.
 4. Select your new distribution from the Choose Distribution field.
@@ -283,9 +289,7 @@ This will use the secrets added to your Github repository.
 
 ## Deploy local site to S3
 
-1. Run your production build script.
+1. Run your production build script.  
    `npm run build`
-2. Push your branch to Github to trigger the action.
+2. Push your branch to Github to trigger the action.  
    `git add . && git commit -m 'staging deployment' && git push origin staging`
-
-Or, `npm run deploy-staging` - configured via package.json
