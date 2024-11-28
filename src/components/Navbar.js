@@ -10,10 +10,10 @@ import {
   AiOutlineHome,
   AiFillHome,
 } from "react-icons/ai";
-// import {
-//   BsLaptop,
-//   BsFillLaptopFill,
-// } from "react-icons/bs";
+import {
+  BsLaptop,
+  BsFillLaptopFill,
+} from "react-icons/bs";
 import {
   MdOutlineDescription,
   MdDescription
@@ -65,7 +65,7 @@ function NavBar() {
             <NavbarMenuItem target="/" iconOn={<AiFillHome />} iconOff={<AiOutlineHome />} text="Home" />
             {/* <NavbarMenuItem target="/about" iconOn={<RiUser3Fill />} iconOff={<RiUser3Line />} text="About" /> */}
             {/* <NavbarMenuItem target="/project" iconOn={<BsFillLaptopFill />} iconOff={<BsLaptop />} text="Projects" /> */}
-            {/* <NavbarMenuItem target="/portfolio" iconOn={<BsFillLaptopFill />} iconOff={<BsLaptop />} text="Portfolio" /> */}
+            <NavbarMenuItem target="/portfolio" iconOn={<BsFillLaptopFill />} iconOff={<BsLaptop />} text="Portfolio" />
             <NavbarMenuItem target="/resume" iconOn={<MdDescription />} iconOff={<MdOutlineDescription />} text="Resume" />
 
           </Nav>

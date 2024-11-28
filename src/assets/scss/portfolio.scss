@@ -6,10 +6,10 @@
   // padding-top: 150px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
-  padding-top: 2em;
+  padding-top: 6em;
 
   @include mixins.respond-to(sm) {
-    padding-top: 4em;
+    padding-top: 6em;
   }
   // background: pink;
 

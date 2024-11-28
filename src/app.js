@@ -28,6 +28,7 @@ function App() {
   }, []);
 
   return (
+    
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
@@ -45,15 +46,8 @@ function App() {
       </div>
     </Router>
     
-    
-    // <Router>
-    //   <Preloader />
-    //   <div className="App" id={load ? "no-scroll" : "scroll"}>
-
-    //   </div>
-    // </Router>
-    
   );
+  
 }
 
 export default App;
