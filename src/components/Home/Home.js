@@ -209,7 +209,7 @@ function SkillsIconsCarousel() {
 
 function Home() {
   return (
-    <section>
+    // <section>
       <Container className="home-section" id="home">
         
         <Container fluid className="home-content">
@@ -269,7 +269,7 @@ function Home() {
       
         <Home2 />
       </Container>
-    </section>
+    // </section>
   );
 }
 

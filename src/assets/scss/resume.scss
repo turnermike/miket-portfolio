@@ -18,7 +18,7 @@
   padding-bottom: 6em;
 
   @include mixins.respond-to(sm) {
-    padding-top: 10em;
+    padding-top: 9em;
   }
 }
 

@@ -10,7 +10,11 @@ function ResumeNew() {
 
       <Container className="resume-section"> 
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "left", position: "relative" }}>
+          
+          <h1>Mike's Resume</h1>
+          <p>Click the button to download a PDF.</p>
+          
           <Button
             variant="primary"
             href={pdf}

@@ -16,10 +16,10 @@
 .home-section {
   position: relative;
   padding-bottom: 30px !important;
-  padding-top: 2em;
+  padding-top: 6em;
 
   @include mixins.respond-to(sm) {
-    padding-top: 6em;
+    padding-top: 9em;
   }
 
   .home-content {
@@ -27,7 +27,8 @@
     text-align: left;
 
     .home-header {
-      padding: 40px 12px !important;
+      // padding: 40px 12px !important;
+      padding: 0 12px !important;
       font-size: 1.125em;
 
       h2 {
