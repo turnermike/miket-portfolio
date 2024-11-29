@@ -9,18 +9,31 @@ module.exports = merge(common, {
   
   mode: 'development',
   
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, '../public'),
+  //   },
+  //   open: true,
+  //   compress: true,
+  //   port: port,
+  // },
+  
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      // Ensure the path is correctly pointing to the 'public' folder one level up
+      directory: path.join(__dirname, '../public'), 
     },
-    open: true,
-    compress: true,
-    port: port,
-  },
+    open: true, // Automatically opens the browser
+    compress: true, // Enables gzip compression
+    port: port, // Ensure the correct port is being used (you can define it above)
+    historyApiFallback: true, // Ensures React Router or similar SPA libraries work
+    hot: true, // Enables hot module replacement (HMR) if needed
+    liveReload: true, // Automatically reloads the page on file changes
+  },  
   
   cache: {
     type: 'filesystem',
-    cacheDirectory: path.resolve(__dirname, '.webpack_cache'),
+    cacheDirectory: path.resolve(__dirname, '../.webpack_cache'),
     name: 'miket-portfolio-webpack-cache',
     buildDependencies: {
       config: [path.resolve(__dirname, 'webpack.common.js'), path.resolve(__dirname, 'webpack.dev.js')]
