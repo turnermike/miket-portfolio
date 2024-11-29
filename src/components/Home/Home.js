@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import homeHeroImg from '../../assets/images/IMG_0140.jpg';
 import '../../assets/scss/app.scss';
-// import Particle from '../Particle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -212,8 +211,6 @@ function Home() {
   return (
     <section>
       <Container className="home-section" id="home">
-        
-        {/* <Particle /> */}
         
         <Container fluid className="home-content">
           <Row>

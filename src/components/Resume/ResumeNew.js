@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-// import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import pdf from "../../assets/pdf/MichaelTurner-Developer-Resume.pdf";
 

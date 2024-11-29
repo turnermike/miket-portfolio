@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const common = require('./webpack.common.js');
 
+const port = process.env.PORT || 3000;
 
 module.exports = merge(common, {
   
@@ -12,8 +13,9 @@ module.exports = merge(common, {
     static: {
       directory: path.join(__dirname, 'public'),
     },
+    open: true,
     compress: true,
-    port: 3000,
+    port: port,
   },
   
   cache: {
