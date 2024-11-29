@@ -6,11 +6,12 @@
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   padding-top: 6em;
+  background: lightblue !important;
+  
 
   @include mixins.respond-to(sm) {
     padding-top: 6em;
   }
-  // background: pink;
   
 
   .portfolio-content {
