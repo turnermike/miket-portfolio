@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import 'react-tabs/style/react-tabs.css';
 import SurreyPlaceLogo from "../svg/SurreyPlaceLogo";
+import SiriusXMLogo from "../svg/SiriusXMLogo";
 
 function Portfolio() {
 
@@ -14,9 +15,8 @@ function Portfolio() {
         <p>Here's an overview of my completed projects, along with key details about each task.</p>
       </Row>
 
+      {/* Surrey Place */}
       <Row>
-
-        {/* <h2>Surrey Place</h2> */}
         <Tab.Container id="sp-tabs" defaultActiveKey="first">
           <Col sm={3}>
             <Nav className="flex-column">
@@ -43,11 +43,14 @@ function Portfolio() {
         </Tab.Container>
       </Row>
 
+      {/* SiriusXM Canada */}
       <Row>
-        <h2>SiriusXM Canada</h2>
         <Tab.Container id="sxm-tabs" defaultActiveKey="first">
           <Col sm={3}>
             <Nav className="flex-column">
+              <Nav.Item>
+                <SiriusXMLogo />
+              </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="first">Tab 1</Nav.Link>
               </Nav.Item>

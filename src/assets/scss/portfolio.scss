@@ -24,19 +24,12 @@
   // tabs
   .nav-item {
     &:first-child {
-      // margin-bottom: 2em;
       height: 60px;
     }
 
     .nav-link {
       padding-top: 0;
       padding-left: 0;
-      // display: block;
-      // padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-      // font-size: var(--bs-nav-link-font-size);
-      // font-weight: var(--bs-nav-link-font-weight);
-      // color: var(--bs-nav-link-color) !important;
-      // text-decoration: none !important;
       background: 0;
       border: 0;
       // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -45,12 +38,14 @@
       &.active {
         color: #fff !important;
         cursor: default;
-        // text-decoration: underline !important;
       }
     }
   }
 
-  .surrey-place-logo {
+  .surrey-place-logo,
+  .siriusxm-logo {
+    width: 100%;
+    height: auto;
     fill: #fff;
   }
 }
