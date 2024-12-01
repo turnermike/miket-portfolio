@@ -3,6 +3,7 @@ import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import 'react-tabs/style/react-tabs.css';
 import SurreyPlaceLogo from "../svg/SurreyPlaceLogo";
 import SiriusXMLogo from "../svg/SiriusXMLogo";
+import MazdaLogo from "../svg/MazdaLogo";
 
 function Portfolio() {
 
@@ -18,7 +19,7 @@ function Portfolio() {
       {/* Surrey Place */}
       <Row>
         <Tab.Container id="sp-tabs" defaultActiveKey="first">
-          <Col sm={3}>
+          <Col sm={3} lg={2}>
             <Nav className="flex-column">
               <Nav.Item>
                 <SurreyPlaceLogo />
@@ -31,7 +32,7 @@ function Portfolio() {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={9}>
+          <Col sm={9} lg={10}>
             <Tab.Content>
               <Tab.Pane eventKey="first">
                 <h3>Custom WordPress Plugin for Online Payments</h3>
@@ -46,7 +47,7 @@ function Portfolio() {
       {/* SiriusXM Canada */}
       <Row>
         <Tab.Container id="sxm-tabs" defaultActiveKey="first">
-          <Col sm={3}>
+          <Col sm={3} lg={2}>
             <Nav className="flex-column">
               <Nav.Item>
                 <SiriusXMLogo />
@@ -59,7 +60,32 @@ function Portfolio() {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={9}>
+          <Col sm={9} lg={10}>
+            <Tab.Content>
+              <Tab.Pane eventKey="first">First tab content</Tab.Pane>
+              <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
+            </Tab.Content>
+          </Col>
+        </Tab.Container>
+      </Row>
+
+      {/* Mazda Canada */}
+      <Row>
+        <Tab.Container id="mazda-tabs" defaultActiveKey="first">
+          <Col sm={3} lg={2}>
+            <Nav className="flex-column">
+              <Nav.Item>
+                <MazdaLogo />
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="first">Tab 1</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second">Tab 2</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+          <Col sm={9} lg={10}>
             <Tab.Content>
               <Tab.Pane eventKey="first">First tab content</Tab.Pane>
               <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
