@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import SurreyPlaceLogo from "../svg/SurreyPlaceLogo";
 import SiriusXMLogo from "../svg/SiriusXMLogo";
 import MazdaLogo from "../svg/MazdaLogo";
+import KFCLogo from "../svg/KFCLogo";
 
 function Portfolio() {
 
@@ -76,6 +77,31 @@ function Portfolio() {
             <Nav className="flex-column">
               <Nav.Item>
                 <MazdaLogo />
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="first">Tab 1</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second">Tab 2</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+          <Col sm={9} lg={10}>
+            <Tab.Content>
+              <Tab.Pane eventKey="first">First tab content</Tab.Pane>
+              <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
+            </Tab.Content>
+          </Col>
+        </Tab.Container>
+      </Row>
+
+      {/* KFC */}
+      <Row>
+        <Tab.Container id="kfc-tabs" defaultActiveKey="first">
+          <Col sm={3} lg={2}>
+            <Nav className="flex-column">
+              <Nav.Item>
+                <KFCLogo />
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="first">Tab 1</Nav.Link>
