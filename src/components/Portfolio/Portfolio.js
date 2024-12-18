@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import 'react-tabs/style/react-tabs.css';
+// logos
 import SurreyPlaceLogo from "../svg/SurreyPlaceLogo";
 import SiriusXMLogo from "../svg/SiriusXMLogo";
 import MazdaLogo from "../svg/MazdaLogo";
