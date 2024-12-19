@@ -1,18 +1,24 @@
-import React from "react";
-import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
-import 'react-tabs/style/react-tabs.css';
+import React, { useState } from 'react';
+import { Container, Row, Col, Tab, Nav, Modal } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // logos
 import SurreyPlaceLogo from "../svg/SurreyPlaceLogo";
 import SiriusXMLogo from "../svg/SiriusXMLogo";
 import MazdaLogo from "../svg/MazdaLogo";
 import KFCLogo from "../svg/KFCLogo";
 
-function Portfolio() {
+const Portfolio = () => {
+  const [show, setShow] = useState(false);
+  const [modalImage, setModalImage] = useState('');
+
+  const handleClose = () => setShow(false);
+  const handleShow = (imageSrc) => {
+    setModalImage(imageSrc);
+    setShow(true);
+  };
 
   return (
-
     <Container className="portfolio-section">
-
       <Row>
         <h1>Mike's Portfolio</h1>
         <p>Here's an overview of my completed projects, along with key details about each task.</p>
@@ -38,29 +44,40 @@ function Portfolio() {
             <Tab.Content>
               <Tab.Pane eventKey="first">
                 <h3>Custom WordPress Plugin for Online Payments</h3>
-                {/* <p>Developed a WordPress plugin integrating the Stripe API to facilitate secure online payments. The solution included a dynamic questionnaire form and flexible payment options, such as full payment, a 50/50 split, or a 30/40/30 subscription model tailored to program requirements. Additionally, implemented and documented a robust Git-based workflow, streamlining collaboration and continuous deployment using Bitbucket and WP Engine.</p> */}
                 <p>Designed and developed a custom WordPress plugin leveraging the Stripe API for secure online payment processing. The solution featured a dynamic questionnaire form and flexible payment options, including full payment, 50/50 split payments, and a 30/40/30 subscription model tailored to specific program needs. Additionally, established and documented a robust Git-based workflow, enhancing team collaboration and enabling seamless continuous deployment via Bitbucket and WP Engine.</p>
                 <div className="images-wrapper">
                   <Row>
-                    <Col sm={12} md={6} lg={4} className="mb-4">
-                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    <Col sm={12} md={6} lg={4} className="mb-5">
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                        <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                      </a>
                     </Col>
-                    <Col sm={12} md={6} lg={4} className="mb-4">
-                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    <Col sm={12} md={6} lg={4} className="mb-5">
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                        <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                      </a>
                     </Col>
-                    <Col sm={12} md={6} lg={4} className="mb-4">
-                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    <Col sm={12} md={6} lg={4} className="mb-5">
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                        <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                      </a>
                     </Col>
                   </Row>
                   <Row>
-                    <Col sm={12} md={6} lg={4} className="mb-4">
-                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    <Col sm={12} md={6} lg={4} className="mb-5">
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                        <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                      </a>
                     </Col>
-                    <Col sm={12} md={6} lg={4} className="mb-4">
-                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    <Col sm={12} md={6} lg={4} className="mb-5">
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                        <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                      </a>
                     </Col>
-                    <Col sm={12} md={6} lg={4} className="mb-4">
-                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    <Col sm={12} md={6} lg={4} className="mb-5">
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                        <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                      </a>
                     </Col>
                   </Row>
                 </div>
@@ -149,10 +166,17 @@ function Portfolio() {
         </Tab.Container>
       </Row>
 
+      {/* Modal */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Image Preview</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img src={modalImage} alt="Modal Preview" className="img-fluid" />
+        </Modal.Body>
+      </Modal>
     </Container>
-
   );
-
-}
+};
 
 export default Portfolio;
