@@ -30,13 +30,14 @@
     .nav-link {
       padding-top: 0;
       padding-left: 0;
+      color: #fff !important;
       background: 0;
       border: 0;
-      // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
       transition: color 0.15s ease-in-out;
 
       &.active {
-        color: #fff !important;
+        color: variables.$font-color-2 !important;
+        font-weight: bold;
         cursor: default;
       }
     }
@@ -53,4 +54,12 @@
   //   margin-bottom: 20px;
   //   background: #fff;
   // }
+
+  .images-wrapper {
+    .row {
+      .col* {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }

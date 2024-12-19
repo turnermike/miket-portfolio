@@ -38,9 +38,37 @@ function Portfolio() {
             <Tab.Content>
               <Tab.Pane eventKey="first">
                 <h3>Custom WordPress Plugin for Online Payments</h3>
-                <p>Developed a WordPress plugin integrating the Stripe API to facilitate secure online payments. The solution included a dynamic questionnaire form and flexible payment options, such as full payment, a 50/50 split, or a 30/40/30 subscription model tailored to program requirements. Additionally, implemented and documented a robust Git-based workflow, streamlining collaboration and continuous deployment using Bitbucket and WP Engine.</p>
+                {/* <p>Developed a WordPress plugin integrating the Stripe API to facilitate secure online payments. The solution included a dynamic questionnaire form and flexible payment options, such as full payment, a 50/50 split, or a 30/40/30 subscription model tailored to program requirements. Additionally, implemented and documented a robust Git-based workflow, streamlining collaboration and continuous deployment using Bitbucket and WP Engine.</p> */}
+                <p>Designed and developed a custom WordPress plugin leveraging the Stripe API for secure online payment processing. The solution featured a dynamic questionnaire form and flexible payment options, including full payment, 50/50 split payments, and a 30/40/30 subscription model tailored to specific program needs. Additionally, established and documented a robust Git-based workflow, enhancing team collaboration and enabling seamless continuous deployment via Bitbucket and WP Engine.</p>
+                <div className="images-wrapper">
+                  <Row>
+                    <Col sm={12} md={6} lg={4} className="mb-4">
+                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    </Col>
+                    <Col sm={12} md={6} lg={4} className="mb-4">
+                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    </Col>
+                    <Col sm={12} md={6} lg={4} className="mb-4">
+                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col sm={12} md={6} lg={4} className="mb-4">
+                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    </Col>
+                    <Col sm={12} md={6} lg={4} className="mb-4">
+                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    </Col>
+                    <Col sm={12} md={6} lg={4} className="mb-4">
+                      <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
+                    </Col>
+                  </Row>
+                </div>
               </Tab.Pane>
-              <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
+              <Tab.Pane eventKey="second">
+                <h3>Camp and Program Filters</h3>
+                <p>Developed functional React filters to allow customers to sort products by age group, location, and program level. Products were dynamically populated using a custom post type, with taxonomies facilitating categorization, all managed through a custom WordPress plugin.</p>
+              </Tab.Pane>
             </Tab.Content>
           </Col>
         </Tab.Container>
