@@ -1,0 +1,40 @@
+/**
+* React Bootstrap Modal Styles
+*
+* Override the default styles of react bootstrap modal
+*
+*/
+
+.modal-content {
+  max-width: 400px;
+  color: #fff !important;
+  background-color: #000 !important;
+  border: 1px solid #fff !important;
+
+  .modal-header {
+    border-bottom: 0 !important;
+
+    .modal-title {
+      width: 60%;
+      font-size: 1.25em;
+      line-height: 1.375em;
+
+      svg {
+        margin-bottom: 12px;
+        fill: #fff;
+      }
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .modal-body {
+    padding-top: 0;
+  }
+}

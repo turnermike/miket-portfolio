@@ -6,7 +6,6 @@
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   padding-top: 6em;
-  // background: lightblue !important;
 
   @include mixins.respond-to(sm) {
     padding-top: 9em;
@@ -18,7 +17,7 @@
   h3 {
     margin-bottom: 0 !important;
     height: 60px;
-    font-size: 1.25em;
+    // font-size: 1.25em;
   }
 
   // tabs
@@ -50,10 +49,6 @@
     height: auto;
     fill: #fff;
   }
-  // .kfc-logo {
-  //   margin-bottom: 20px;
-  //   background: #fff;
-  // }
 
   .images-wrapper {
     .row {

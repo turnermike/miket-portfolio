@@ -7,19 +7,22 @@
 * - header 
 * - preloader
 * - skills carousel
-* - 
 *
 * Colours: https: //www.colourlovers.com/palette/34448/2_Kool_for_Skool
 *
 * Breakpoints (react-bootstrap):
 *
-* Breakpoint	Class Prefix	Description	Min             Width
-* xs	        .col-	        Extra       small devices	  None
-* sm	        .col-sm-	    Small       devices	        576px
-* md	        .col-md-	    Medium      devices	        768px
-* lg	        .col-lg-	    Large       devices	        992px
-* xl	        .col-xl-	    Extra       large devices	  1200px
-* xxl	        .col-xxl-	    Extra       extra large	    1400px
+* Breakpoint	Class Prefix	Description	            Width
+* xs	        .col-	        Extra Small             None
+* sm	        .col-sm-	    Small                   576px
+* md	        .col-md-	    Medium                  768px
+* lg	        .col-lg-	    Large                   992px
+* xl	        .col-xl-	    Extra Large             1200px
+* xxl	        .col-xxl-	    Extra Extra Large       1400px
+*
+* Font Sizes:
+* Base font size: 18px;
+* Base line height: 24px;
 *
 * Bottom Margins
 * Headers: 20px
@@ -31,6 +34,7 @@
 @use 'mixins';
 @use 'nav-bar';
 @use 'footer';
+@use 'modal';
 @use 'home';
 @use 'portfolio';
 @use 'resume';
@@ -69,22 +73,30 @@ body {
   margin: 0;
   color: #fff !important;
   font-family: 'Inter', sans-serif !important;
+  font-size: 1em !important;
+  // line-height: 1.125em; // 18px
+  // line-height: 1.25em !important; // 20px
+  // line-height: 1.375em !important; // 22px
+  line-height: 1.5em !important; // 24px
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: variables.$background-color-1;
   background-image: linear-gradient(to left, #020304, black);
-  // background: red !important;
 }
 
 h1 {
   margin-bottom: 20px !important;
   padding-bottom: 0 !important;
-  // font-size: 2.625em !important;
-  font-size: 1em !important;
+  // font-size: 1em !important; // 16px
+  // font-size: 1.5em !important; // 24px
+  font-size: 1.625em !important; // 26px
+  // font-size: 1.75em !important; // 28px
 
-  @include mixins.respond-to(sm) {
-    font-size: 1.333em !important;
-  }
+  background: red;
+
+  // @include mixins.respond-to(sm) {
+  //   font-size: 1.333em !important;
+  // }
 }
 
 h2 {
@@ -181,7 +193,7 @@ button:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  // font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -240,15 +252,13 @@ button:focus {
 
   .swiper-wrapper {
     cursor: grab;
-    // background: pink;
 
     .swiper-slide {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       text-align: center;
-      font-size: 18px;
-      // background: lightblue;
+      // font-size: 18px;
 
       svg {
         display: block;
@@ -271,7 +281,6 @@ button:focus {
 .swiper-button-next {
   color: #777 !important;
   &::after {
-    // font-size: 1.75em !important;
     font-size: 1.5em !important;
     font-weight: bold;
 

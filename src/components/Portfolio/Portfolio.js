@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Tab, Nav, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { IoCloseCircleOutline } from "react-icons/io5";
 // logos
 import SurreyPlaceLogo from "../svg/SurreyPlaceLogo";
 import SiriusXMLogo from "../svg/SiriusXMLogo";
@@ -10,10 +11,14 @@ import KFCLogo from "../svg/KFCLogo";
 const Portfolio = () => {
   const [show, setShow] = useState(false);
   const [modalImage, setModalImage] = useState('');
+  const [modalTitle, setModalTitle] = useState('');
+  const [modalDescription, setModalDescription] = useState('');
 
   const handleClose = () => setShow(false);
-  const handleShow = (imageSrc) => {
+  const handleShow = (imageSrc, title, description) => {
     setModalImage(imageSrc);
+    setModalTitle(title);
+    setModalDescription(description);
     setShow(true);
   };
 
@@ -48,34 +53,34 @@ const Portfolio = () => {
                 <div className="images-wrapper">
                   <Row>
                     <Col sm={12} md={6} lg={4} className="mb-5">
-                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600', <><SurreyPlaceLogo /></>, 'Stripe Payments and Custom Checkout'); }}>
                         <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
                       </a>
                     </Col>
                     <Col sm={12} md={6} lg={4} className="mb-5">
-                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600', <><SurreyPlaceLogo /></>, 'Stripe Payments and Custom Checkout'); }}>
                         <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
                       </a>
                     </Col>
                     <Col sm={12} md={6} lg={4} className="mb-5">
-                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600', <><SurreyPlaceLogo /></>, 'Stripe Payments and Custom Checkout'); }}>
                         <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
                       </a>
                     </Col>
                   </Row>
                   <Row>
                     <Col sm={12} md={6} lg={4} className="mb-5">
-                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600', <><SurreyPlaceLogo /></>, 'Stripe Payments and Custom Checkout'); }}>
                         <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
                       </a>
                     </Col>
                     <Col sm={12} md={6} lg={4} className="mb-5">
-                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600', <><SurreyPlaceLogo /></>, 'Stripe Payments and Custom Checkout'); }}>
                         <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
                       </a>
                     </Col>
                     <Col sm={12} md={6} lg={4} className="mb-5">
-                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600'); }}>
+                      <a href="#" onClick={(e) => { e.preventDefault(); handleShow('https://placehold.co/400x600', <><SurreyPlaceLogo /></>, 'Stripe Payments and Custom Checkout'); }}>
                         <img src="https://placehold.co/400x600" alt="" className="img-fluid" />
                       </a>
                     </Col>
@@ -168,13 +173,16 @@ const Portfolio = () => {
 
       {/* Modal */}
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Image Preview</Modal.Title>
+        <Modal.Header>
+          <Modal.Title>{modalTitle}</Modal.Title>
+          <IoCloseCircleOutline size={30} onClick={handleClose} className='modal-close' />
         </Modal.Header>
         <Modal.Body>
+          <p>{modalDescription}</p>
           <img src={modalImage} alt="Modal Preview" className="img-fluid" />
         </Modal.Body>
       </Modal>
+
     </Container>
   );
 };
